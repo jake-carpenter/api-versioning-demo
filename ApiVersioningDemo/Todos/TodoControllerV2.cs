@@ -3,22 +3,21 @@ using System.Collections.Generic;
 
 namespace ApiVersioningDemo.Todos
 {
-    [ApiController, ApiVersion("1.0")]
-    [Route("todos")]
+    [ApiController, ApiVersion("2.0")]
     [Route("v{v:apiVersion}/todos")]
-    public class TodoControllerV1 : ControllerBase
+    public class TodoControllerV2 : ControllerBase
     {
         public static List<Todo> Todos = new List<Todo>
         {
-            new Todo { Id = 1, Value = "one" },
-            new Todo { Id = 2, Value = "two" },
-            new Todo { Id = 3, Value = "three" },
-            new Todo { Id = 4, Value = "four" },
-            new Todo { Id = 5, Value = "five" },
+            new Todo { Id = 1, Value = "ONE" },
+            new Todo { Id = 2, Value = "TWO" },
+            new Todo { Id = 3, Value = "THREE" },
+            new Todo { Id = 4, Value = "FOUR" },
+            new Todo { Id = 5, Value = "FIVE" },
         };
 
         [HttpGet]
-        public virtual ActionResult<List<Todo>> List()
+        public ActionResult<List<Todo>> List()
         {
             return Todos;
         }
