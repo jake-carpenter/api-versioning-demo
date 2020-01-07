@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ApiVersioningDemo.Todos
 {
-    [ApiController]
+    [ApiController, ApiVersion("1.0")]
     [Route("todos")]
     public class TodoControllerV1 : ControllerBase
     {
